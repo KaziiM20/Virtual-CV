@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Portfolio</title>
+	<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+
+<body>
+	<header>
+		<h1 style="color:white; text-align: center; font-size: 48px;">View My Curriculum Vitae</h1>
+		<nav>
+			<a href="/" class="nav-button">Home</a>
+			<a href="/about" class="nav-button">About</a>
+			<a href="/projects" class="nav-button">Skills & Projects</a>
+			<a href="/contact" class="nav-button">Contact</a>
+			<a href="/resume" class="nav-button">CV</a>
+		</nav>
+		
+		<!-- View Resume PDF -->
+		<div style="display: flex; justify-content: center;">
+			<iframe src="{{ url_for('static', filename='SDMalesa_CurriculumVitae.pdf') }}" width="60%" height="550px" style="border:none;"></iframe>
+		</div>
+		
+		<!--download button -->
+		<br><br>
+		<div style="padding-left: 400px;">
+			<a href="{{ url_for('static', filename='SDMalesa_CurriculumVitae.pdf') }}" download>
+				<button style="padding: 20px 40px; background-color: #2ecc71; color: white; border: none; border-radius: 5px; cursor: pointer;">
+					Download CV
+				</button>
+			</a>
+		</div>
+	</header>
+</body>
+</html>
